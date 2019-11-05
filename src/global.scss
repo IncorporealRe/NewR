@@ -24,3 +24,15 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.header-background-color {
+  --background: #d38d00;
+  --color: black;
+  height: 100%;
+}
+
+.header-icon {
+  width: 1.8em;
+  height: 1.8em;
+  color: black;
+}

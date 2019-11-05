@@ -1,9 +1,12 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+    // { path: '', redirectTo: 'main', pathMatch: 'full' },
+    // { path: 'main', loadChildren: './main/main.module#MainPageModule' },
+    // { path: 'calendar', loadChildren: './calendar/calendar.module#CalendarPageModule' },
+    // { path: 'options', loadChildren: './options/options.module#OptionsPageModule' },
+    {path: '', loadChildren: './tabs/tabs.module#TabsPageModule'},
 ];
 
 @NgModule({

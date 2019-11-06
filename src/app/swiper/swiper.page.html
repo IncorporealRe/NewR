@@ -1,0 +1,80 @@
+<ion-content>
+    <ion-slides [options]="slideOpts" class="Slides" pager="true">
+        <ion-slide class="slide-1 slide">
+            <div>
+                <span class="mat-display-1">Ласкаво просимо!</span>
+                <br>
+                <br>
+                <p> Дана інструкція допоможе вам додати свого улюбленця</p>
+            </div>
+        </ion-slide>
+
+        <ion-slide class="slide ">
+            <ul class="petTypeInput">
+                <ion-label>
+                    Що у вас за чотирилапий?
+                </ion-label>
+                <li (click)="petTypeChoose('cat')" [ngClass]="this.type=='cat'?'petTypeSelected':'half-visible'">
+                    <p>Кіт</p>
+                </li>
+                <li (click)="petTypeChoose('dog')" [ngClass]="this.type=='dog'?'petTypeSelected':'half-visible'">
+                    <p>Пес</p>
+                </li>
+            </ul>
+        </ion-slide>
+        <ion-slide class="slide-2 slide">
+            <ul class="listShow">
+                <li>
+                    <ion-label>
+                        Ваш домашній улюбленець
+                    </ion-label>
+                </li>
+                <li>
+                    <br>
+                </li>
+                <li>
+                    <div (click)="sexChoose(true) " [ngClass]="isFem?'sex':'half-visible'" class="sex pink">
+                        <ion-img src="/assets/img/female.png"></ion-img>
+                        <ion-label>Дівчинка</ion-label>
+                    </div>
+                </li>
+                <li>
+                    <div class="separator"></div>
+                </li>
+                <li>
+                    <div (click)="sexChoose(false)" [ngClass]="!isFem?'sex':'half-visible'" class="sex blue">
+                        <ion-img src="/assets/img/male.png"></ion-img>
+                        <ion-label>Хлопчик</ion-label>
+                    </div>
+                </li>
+            </ul>
+        </ion-slide>
+        <ion-slide class="slide-2 slide">
+            <div class="TextForm">
+                <div class="InputStyle">
+                    <ion-item class="InputRadius">
+                        <ion-input placeholder="Ім'я"></ion-input>
+                    </ion-item>
+                </div>
+                <br>
+                <div class="InputStyle">
+                    <ion-item class="InputRadius">
+                        <ion-datetime (ionChange)="dateChanged($event)" [dayNames]="dayNamesUa"
+                                      [max]="todayDateStr"
+                                      [monthShortNames]="monthShortNamesUa" cancelText="Відмінити"
+                                      doneText="Вибрати"
+                                      placeholder="Дата"></ion-datetime>
+                    </ion-item>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide class="slide-2 slide">
+            <div>
+                <br>
+                <a [routerLink]="['/tabs/main']">
+                    <img src="https://ru.seaicons.com/wp-content/uploads/2015/10/Start-2-icon.png">
+                </a>
+            </div>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

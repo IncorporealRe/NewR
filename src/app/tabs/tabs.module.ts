@@ -12,9 +12,21 @@ const routes: Routes = [
         path: 'tabs',
         component: TabsPage,
         children: [
-            {path: 'main', loadChildren: '../main/main.module#MainPageModule'},
+            {
+                path: 'main',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: '../main/main.module#MainPageModule'
+                    },
+                    {
+                        path: 'add',
+                        loadChildren: './add/add.module#AddPageModule'
+                    },
+                ]
+            },
             {path: 'calendar', loadChildren: '../calendar/calendar.module#CalendarPageModule'},
-            {path: 'options', loadChildren: '../options/options.module#OptionsPageModule'}
+            {path: 'options', loadChildren: '../options/options.module#OptionsPageModule'},
         ]
     },
     {

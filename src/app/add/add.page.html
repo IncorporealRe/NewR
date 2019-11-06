@@ -8,7 +8,7 @@
                     </a>
                 </ion-col>
                 <ion-col class="header-col" style="text-align: center">
-                    Add
+                    Додати
                 </ion-col>
                 <ion-col class="header-col item-align-right" style="text-align: -webkit-right">
 
@@ -17,3 +17,23 @@
         </ion-grid>
     </ion-toolbar>
 </ion-header>
+
+<ion-content>
+    <div class="divstyle">
+        <ion-item>
+            <ion-label position="floating">Ім'я</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Стать</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Порода</ion-label>
+            <ion-select interface="action-sheet" placeholder="Select One">
+                <ion-select-option *ngFor="let item of Breed">{{item}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </div>
+
+</ion-content>

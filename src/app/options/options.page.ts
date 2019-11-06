@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./options.page.scss'],
 })
 export class OptionsPage implements OnInit {
-
+    language = ['Російська мова', 'Англійська мова', 'Украинська мова'];
     constructor() {
     }
 

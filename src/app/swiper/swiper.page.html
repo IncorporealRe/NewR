@@ -1,18 +1,18 @@
-<ion-content>
+<ion-content class="fonttext">
     <ion-slides [options]="slideOpts" class="Slides" pager="true">
         <ion-slide class="slide-1 slide">
-            <div>
-                <span class="mat-display-1">Ласкаво просимо!</span>
+            <div >
+                <span class="fonttext mat-display-1">Ласкаво просимо!</span>
                 <br>
                 <br>
-                <p> Дана інструкція допоможе вам додати свого улюбленця</p>
+                <p class="fonttext"> Дана інструкція допоможе вам додати свого улюбленця</p>
             </div>
         </ion-slide>
 
         <ion-slide class="slide ">
             <ul class="petTypeInput">
-                <ion-label>
-                    Що у вас за чотирилапий?
+                <ion-label class="fonttext">
+                    Якій у вас домашній улюбленець?
                 </ion-label>
                 <li (click)="petTypeChoose('cat')" [ngClass]="this.type=='cat'?'petTypeSelected':'half-visible'">
                     <p>Кіт</p>
@@ -25,7 +25,7 @@
         <ion-slide class="slide-2 slide">
             <ul class="listShow">
                 <li>
-                    <ion-label>
+                    <ion-label class="fonttext">
                         Ваш домашній улюбленець
                     </ion-label>
                 </li>
@@ -35,7 +35,7 @@
                 <li>
                     <div (click)="sexChoose(true) " [ngClass]="isFem?'sex':'half-visible'" class="sex pink">
                         <ion-img src="/assets/img/female.png"></ion-img>
-                        <ion-label>Дівчинка</ion-label>
+                        <ion-label class="fonttext">Дівчинка</ion-label>
                     </div>
                 </li>
                 <li>
@@ -44,7 +44,7 @@
                 <li>
                     <div (click)="sexChoose(false)" [ngClass]="!isFem?'sex':'half-visible'" class="sex blue">
                         <ion-img src="/assets/img/male.png"></ion-img>
-                        <ion-label>Хлопчик</ion-label>
+                        <ion-label class="fonttext">Хлопчик</ion-label>
                     </div>
                 </li>
             </ul>
@@ -54,6 +54,15 @@
                 <div class="InputStyle">
                     <ion-item class="InputRadius">
                         <ion-input placeholder="Ім'я"></ion-input>
+                    </ion-item>
+                </div>
+                <br>
+                <div class="InputStyle">
+                    <ion-item class="InputRadius">
+
+                        <ion-select interface="action-sheet" placeholder="Select One">
+                            <ion-select-option *ngFor="let item of Breed">{{item}}</ion-select-option>
+                        </ion-select>
                     </ion-item>
                 </div>
                 <br>
@@ -72,8 +81,9 @@
             <div>
                 <br>
                 <a [routerLink]="['/tabs/main']">
-                    <img src="https://ru.seaicons.com/wp-content/uploads/2015/10/Start-2-icon.png">
+                    <img src="assets/img/Button.png" style="height: 5em; width: 5em;">
                 </a>
+
             </div>
         </ion-slide>
     </ion-slides>

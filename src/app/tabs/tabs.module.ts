@@ -21,7 +21,7 @@ const routes: Routes = [
                     },
                     {
                         path: 'add',
-                        loadChildren: './add/add.module#AddPageModule'
+                        loadChildren:  '../add/add.module#AddPageModule'
                     },
                 ]
             },

@@ -8,6 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
     styleUrls: ['./swiper.page.scss'],
 })
 export class SwiperPage implements OnInit {
+    Breed = ['Test', 'test2', 'Test3'];
     startDate = new Date(2000, 0, 2);
     // Optional parameters to pass to the swiper instance. See http://idangero.us/swiper/api/ for valid options.
     slideOpts = {

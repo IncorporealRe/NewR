@@ -12,5 +12,8 @@ export class MainPage implements OnInit {
 
     ngOnInit() {
     }
+    Test() {
+
+    }
 
 }

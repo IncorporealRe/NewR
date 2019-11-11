@@ -1,5 +1,7 @@
 {
   "name": "NewR",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

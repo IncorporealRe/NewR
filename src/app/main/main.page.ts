@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AlertController, Platform} from '@ionic/angular';
-import {ELocalNotificationTriggerUnit, LocalNotifications} from '@ionic-native/local-notifications/ngx';
+import {LocalNotifications} from '@ionic-native/local-notifications/ngx';
 
 @Component({
     selector: 'app-main',
@@ -13,7 +13,7 @@ export class MainPage implements OnInit {
                 private alertCtrl: AlertController) {
         this.plt.ready().then(() => {
             this.localNotifcations.on('click').subscribe(res => {
-                let msg = res.data ? res.data.mydata : '';
+                const msg = res.data ? res.data.mydata : '';
                 this.showAlert(res.title, res.text, msg);
             });
 
@@ -25,22 +25,24 @@ export class MainPage implements OnInit {
 
     ngOnInit() {
     }
-    Test() {
-this.localNotifcations.schedule({
-    id: 22,
-    title: 'Test',
-    text: 'Testing',
-    trigger: {every: ELocalNotificationTriggerUnit.MINUTE}
-});
+
+    schedule() {
+        this.localNotifcations.schedule({
+            id: 1,
+            title: 'Test123',
+            text: 'Testing',
+            trigger: { at: new Date(2019, 11, 13, 20, 15)},
+            foreground: true,
+            launch: true
+        });
     }
+
     showAlert(header, sub, msg) {
         this.alertCtrl.create({
-            header: header,
+            header,
             subHeader: sub,
             message: msg,
             buttons: ['OK']
-        }).then(alert => alert.present);
-
+        }).then(alert => alert.present());
     }
-
 }

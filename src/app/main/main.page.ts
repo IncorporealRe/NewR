@@ -30,10 +30,10 @@ export class MainPage implements OnInit {
         this.localNotifcations.schedule({
             id: 1,
             title: 'Test123',
-            text: 'Testing',
-            trigger: { at: new Date(2019, 11, 13, 20, 15)},
+            text: 'Работай!!!!!',
             foreground: true,
-            launch: true
+            launch: true,
+            trigger: {after: new Date(2019, 11, 18, 19, 57)}
         });
     }
 

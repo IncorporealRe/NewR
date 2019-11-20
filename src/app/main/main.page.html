@@ -88,11 +88,4 @@
     </ion-grid>
 </ion-content>
 <ion-button (click)="schedule()" expand="block" >3</ion-button>
-<ion-list>
-    <ion-item *ngFor="let n of schedule()">
-        <ion-label text-wrap>
-        {{n.id}} - {{n.title}}
-<!--            <p>Trigger: {{n.trigger | json}}</p>-->
-        </ion-label>
-    </ion-item>
-</ion-list>
+

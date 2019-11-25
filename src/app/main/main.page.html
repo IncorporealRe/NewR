@@ -9,7 +9,7 @@
                     Головна
                 </ion-col>
                 <ion-col class="header-col item-align-right" style="text-align: -webkit-right">
-                    <a [routerLink]="['/tabs/main/add']">
+                    <a [routerLink]="['/tabs/tabs/main/add']">
                         <ion-icon class="header-icon" name="add-circle"></ion-icon>
                     </a>
                 </ion-col>
@@ -49,37 +49,40 @@
     <br>
     <ion-grid>
         <ion-row>
-            <ion-col size="6" style="text-align: center;align-self: center;">
+            <ion-col size="6" style="text-align: -webkit-center;align-self: center;">
                 <div>
                     <a [routerLink]="['/food']">
-                        <ion-icon name="restaurant" style="color: #1e2023; height:50px;width: 50px;"></ion-icon>
+                        <ion-img src="assets\img\food.svg" style="color: #1e2023;width: 50px; height: 50px;"></ion-img>
                     </a>
 
                 </div>
                 Харчування
             </ion-col>
-            <ion-col size="6" style="text-align: center;align-self: center;">
+            <ion-col size="6" style="text-align: -webkit-center;align-self: center;">
                 <div>
+<!--                    <a [routerLink]="['/care']">-->
+<!--                        <ion-img src="assets\img\Test.svg" style="color: #1e2023; height:50px;width: 50px;"></ion-img>-->
+<!--                    </a>-->
                     <a [routerLink]="['/care']">
-                        <ion-icon name="paw" style="color: #1e2023; height:50px;width: 50px;"></ion-icon>
+                        <ion-img src="assets\img\care.svg" style="color: #1e2023;width: 50px; height: 50px;"></ion-img>
                     </a>
                 </div>
                 Догляд
             </ion-col>
         </ion-row>
         <ion-row>
-            <ion-col size="6" style="text-align: center;align-self: center;">
+            <ion-col size="6" style="text-align: -webkit-center;align-self: center;">
                 <div>
                     <a [routerLink]="['/medicine']">
-                        <ion-icon name="pulse" style="color: #1e2023; height:50px;width: 50px;"></ion-icon>
+                        <ion-img src="assets\img\medicine.svg" style="color: #1e2023;width: 50px; height: 50px;"></ion-img>
                     </a>
                 </div>
                 Медицина
             </ion-col>
-            <ion-col size="6" style="text-align: center;align-self: center;">
+            <ion-col size="6" style="text-align: -webkit-center;align-self: center;">
                 <div>
                     <a [routerLink]="['/hygiene']">
-                        <ion-icon name="rainy" style="color: #1e2023; height:50px;width: 50px;"></ion-icon>
+                        <ion-img src="assets\img\hygiene.svg" style="color: #1e2023;width: 50px; height: 50px;"></ion-img>
                     </a>
                 </div>
                 Гігієна
@@ -87,5 +90,5 @@
         </ion-row>
     </ion-grid>
 </ion-content>
-<ion-button (click)="schedule()" expand="block" >3</ion-button>
+
 

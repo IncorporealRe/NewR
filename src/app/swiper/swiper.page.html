@@ -56,15 +56,7 @@
                         <ion-input placeholder="Ім'я"></ion-input>
                     </ion-item>
                 </div>
-                <br>
-                <div class="InputStyle">
-                    <ion-item class="InputRadius">
 
-                        <ion-select interface="action-sheet" placeholder="Select One">
-                            <ion-select-option *ngFor="let item of Breed">{{item}}</ion-select-option>
-                        </ion-select>
-                    </ion-item>
-                </div>
                 <br>
                 <div class="InputStyle">
                     <ion-item class="InputRadius">
@@ -80,7 +72,7 @@
         <ion-slide class="slide-2 slide">
             <div>
                 <br>
-                <a [routerLink]="['/tabs/main']">
+                <a [routerLink]="['../tabs/tabs/main']">
                     <img src="assets/img/Button.png" style="height: 5em; width: 5em;">
                 </a>
 

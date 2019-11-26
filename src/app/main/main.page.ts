@@ -60,7 +60,7 @@ export class MainPage implements OnInit {
         });
     }
 
-    onSubmit(value){
+    onSubmit(value) {
         let data = {
             title: value.title,
             description: value.description,
@@ -71,7 +71,7 @@ export class MainPage implements OnInit {
                 res => {
                     this.router.navigate([""]);
                 }
-            )
+            );
     }
 
     openImagePicker(){
@@ -117,7 +117,7 @@ export class MainPage implements OnInit {
                 toast.present();
             }, err =>{
                 console.log(err);
-            })
+            });
     }
 
     async presentLoading(loading) {

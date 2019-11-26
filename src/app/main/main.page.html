@@ -24,13 +24,14 @@
             <ion-col size="12" style="text-align: -webkit-center">
                 <div>
                     <a>
-                        <ion-img src="assets/img/reeche_logo.png" style="width: 10em;height: 10em;"></ion-img>
+                        <img  alt="this is the image" src="{{image}}" style="width: 10em;height: 10em;"/>
                     </a>
                 </div>
             </ion-col>
         </ion-row>
     </ion-grid>
-    <!--    -->
+    <ion-button (click)="openCam()" expand="block" fill="outline" size="small" >Open Camera</ion-button>
+    <ion-button (click)="openImagePicker()" expand="block" fill="outline" size="small">Change Picture</ion-button>
     <ion-grid>
         <ion-row>
             <ion-col size="12" style="text-align: center; background: ghostwhite">

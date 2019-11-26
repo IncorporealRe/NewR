@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'care', loadChildren: './care/care.module#CarePageModule' },
   { path: 'medicine', loadChildren: './medicine/medicine.module#MedicinePageModule' },
   { path: 'hygiene', loadChildren: './hygiene/hygiene.module#HygienePageModule' },
-
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' }
 ];
 
 @NgModule({

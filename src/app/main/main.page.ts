@@ -40,20 +40,33 @@ export class MainPage implements OnInit {
             mediaType: this.camera.MediaType.PICTURE
         };
 
+
         this.camera.getPicture(options).then((imageData) => {
             // imageData is either a base64 encoded string or a file URI
             // If it's base64 (DATA_URL):
-            //alert(imageData)
-            this.image = (<any>window).Ionic.WebView.convertFileSrc(imageData);
+            // alert(imageData)
+            console.log('1');
+            this.image = (window as any).Ionic.WebView.convertFileSrc(imageData);
+            const data = {
+                title: 'value.title',
+                description: 'value.description',
+                image: this.image
+            };
+            this.firebaseService.createTask(data)
+                .then(
+                    res => {
+                        this.router.navigate(['']);
+                    }
+                );
         }, (err) => {
             // Handle error
-            alert("error " + JSON.stringify(err))
+            alert('error ' + JSON.stringify(err));
         });
     }
 
 
-    resetFields(){
-        this.image = "./assets/img/reeche_logo.png";
+    resetFields() {
+        this.image = './assets/img/reeche_logo.png';
         this.validations_form = this.formBuilder.group({
             title: new FormControl('', Validators.required),
             description: new FormControl('', Validators.required)
@@ -61,32 +74,31 @@ export class MainPage implements OnInit {
     }
 
     onSubmit(value) {
-        let data = {
+        const data = {
             title: value.title,
             description: value.description,
             image: this.image
-        }
+        };
         this.firebaseService.createTask(data)
             .then(
                 res => {
-                    this.router.navigate([""]);
+                    this.router.navigate(['/tabs/tabs/main']);
                 }
             );
     }
 
-    openImagePicker(){
+    openImagePicker() {
         this.imagePicker.hasReadPermission()
             .then((result) => {
-                if(result == false){
+                if (result == false) {
                     // no callbacks required as this opens a popup which returns async
                     this.imagePicker.requestReadPermission();
-                }
-                else if(result == true){
+                } else if (result == true) {
                     this.imagePicker.getPictures({
                         maximumImagesCount: 1
                     }).then(
                         (results) => {
-                            for (var i = 0; i < results.length; i++) {
+                            for (let i = 0; i < results.length; i++) {
                                 this.uploadImageToFirebase(results[i]);
                             }
                         }, (err) => console.log(err)
@@ -97,7 +109,7 @@ export class MainPage implements OnInit {
             });
     }
 
-    async uploadImageToFirebase(image){
+    async uploadImageToFirebase(image) {
         const loading = await this.loadingCtrl.create({
             message: 'Please wait...'
         });
@@ -106,16 +118,16 @@ export class MainPage implements OnInit {
             duration: 3000
         });
         this.presentLoading(loading);
-        let image_src = this.webview.convertFileSrc(image);
-        let randomId = Math.random().toString(36).substr(2, 5);
+        const image_src = this.webview.convertFileSrc(image);
+        const randomId = Math.random().toString(36).substr(2, 5);
 
-        //uploads img to firebase storage
+        // uploads img to firebase storage
         this.firebaseService.uploadImage(image_src, randomId)
             .then(photoURL => {
                 this.image = photoURL;
                 loading.dismiss();
                 toast.present();
-            }, err =>{
+            }, err => {
                 console.log(err);
             });
     }
